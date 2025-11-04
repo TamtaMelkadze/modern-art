@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ModernArt - თანამედროვე ხელოვნება</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="navbar">
+    <!-- <div class="logo">ModernArt</div> -->
+     <div class="container_flex">
+        <div class="logo" onclick="window.location.href='index.html'" style="cursor:pointer;">
+            ModernArt
+        </div>
+        <div class="menu_group">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">მთავარი</a></li>
+                <li><a href="#">ჩვენ შესახებ</a></li>
+                <li><a href="collection.html">გალერეა</a></li>
+                <li><a href="account.html">ანგარიში</a></li>
+                <li><a href="cart.html">კალათა</a></li>
+                
+            </ul>
+        </nav>
+        <div class="cart">
+            <a href="cart.html">
+                <img src="https://cdn-icons-png.flaticon.com/512/891/891462.png" alt="cart">
+            </a>
+            <span id="cart-count">0</span>
+        </div>
+        </div>
+    </div>
+  </header>
+
+  <!-- Hero section -->
+   <section class="hero">
+    <div class="container">
+  <!-- სურათები ბექგრაუნდად -->
+  <div class="hero-split">
+    <div class="half left"></div>
+    <div class="half right"></div>
+  </div>
+
+  <!-- ტექსტი hero სექციაში -->
+  <div class="hero-content">
+    <h1>შენი ინსპირაცია იწყება აქ</h1>
+    <p>აღმოაჩინე ქართველი მხატვრების უნიკალური ნამუშევრები</p>
+    <button class="shop-btn" onclick="window.location.href='collection.html'">გაეცანი კოლექციას</button>
+  </div>
+  </div>
+</section>
+
+
+  <!-- Products -->
+  <section class="products">
+    
+    <h2>პოპულარული ნამუშევრები</h2>
+    <div class="product-list">
+      <div class="product" data-name="აბსტრაქტული ნახატი" data-price="180">
+        <img src="assets/abstra.JPG" alt="painting1" class="zoomable">
+        <h3>აბსტრაქტული ნახატი</h3>
+        <p class="price">180 ₾</p>
+        <button class="add-to-cart">დამატება კალათაში</button>
+      </div>
+      <div class="product" data-name="მინიმალისტური დეკორი" data-price="120">
+        <img src="assets/minima.JPG" alt="painting2" class="zoomable">
+        <h3>მინიმალისტური დეკორი</h3>
+        <p class="price">120 ₾</p>
+        <button class="add-to-cart">დამატება კალათაში</button>
+      </div>
+      <div class="product" data-name="მთის პეიზაჟი" data-price="200">
+        <img src="assets/landscape_.JPG" alt="painting3" class="zoomable">
+        <h3>მთის პეიზაჟი</h3>
+        <p class="price">200 ₾</p>
+        <button class="add-to-cart">დამატება კალათაში</button>
+      </div>
+    </div>
+    
+  </section>
+
+  <!-- zoom product pictures -->
+   <div id="image-popup" class="image-popup">
+  <span class="close">&times;</span>
+  <img class="popup-content" id="popup-img">
+</div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container_footer">
+    <p>© 2025 ModernArt — სასწავლო ვერსია</p>
+    </div>
+  </footer>
+
+  
+  <script src="script.js"></script>
+  
+  
+
+</body>
+</html>

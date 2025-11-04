@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ანგარიში | ModernArt</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container_flex">
+    <div class="logo" onclick="window.location.href='index.html'" style="cursor:pointer;">
+      ModernArt
+    </div>
+    <div class="menu_group">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">მთავარი</a></li>
+          <li><a href="#">ჩვენ შესახებ</a></li>
+          <li><a href="collection.html">გალერეა</a></li>
+          <li><a href="cart.html">კალათა</a></li>
+          <li><a href="account.html">ანგარიში</a></li>
+        </ul>
+      </nav>
+      <div class="cart">
+        <a href="cart.html">
+          <img src="https://cdn-icons-png.flaticon.com/512/891/891462.png" alt="cart">
+        </a>
+        <span id="cart-count">0</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="account-page">
+  <h2>ანგარიშის შექმნა</h2>
+  <form id="account-form">
+    <label for="username">სახელი:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="email">ელ. ფოსტა:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="password">პაროლი:</label>
+    <input type="password" id="password" name="password" required>
+
+    <label for="confirm-password">გაიმეორეთ პაროლი:</label>
+    <input type="password" id="confirm-password" name="confirm-password" required>
+
+    <button type="submit" class="shop-btn">ანგარიშის შექმნა</button>
+  </form>
+  <p>უკვე გაქვთ ანგარიში? <a href="login.html">შესვლა</a></p>
+</section>
+
+<footer>
+  <p>© 2025 ModernArt</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

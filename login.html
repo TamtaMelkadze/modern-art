@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>შესვლა | ModernArt</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container_flex">
+    <div class="logo" onclick="window.location.href='index.html'" style="cursor:pointer;">
+      ModernArt
+    </div>
+    <div class="menu_group">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">მთავარი</a></li>
+          <li><a href="#">ჩვენ შესახებ</a></li>
+          <li><a href="collection.html">გალერეა</a></li>
+          <li><a href="cart.html">კალათა</a></li>
+          <li><a href="account.html" class="active-link">ანგარიში</a></li>
+        </ul>
+      </nav>
+      <div class="cart">
+        <a href="cart.html">
+          <img src="https://cdn-icons-png.flaticon.com/512/891/891462.png" alt="cart">
+        </a>
+        <span id="cart-count">0</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="account-page">
+  <h2>შესვლა</h2>
+  <form id="login-form">
+    <label for="email">ელ. ფოსტა:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="password">პაროლი:</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="submit" class="shop-btn">შესვლა</button>
+  </form>
+  <p>ჯერ არ გაქვთ ანგარიში? <a href="account.html">რეგისტრაცია</a></p>
+</section>
+
+<footer>
+  <p>© 2025 ModernArt</p>
+</footer>
+
+<script>
+  const loginForm = document.getElementById('login-form');
+
+  loginForm.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const email = loginForm.email.value.trim();
+    const password = loginForm.password.value;
+
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const user = users.find(u => u.email === email && u.password === password);
+
+    if(user){
+      alert(`გამარჯობა, ${user.username}!`);
+      loginForm.reset();
+      // redirect to homepage or account dashboard
+      window.location.href = "index.html";
+    } else {
+      alert("ელ. ფოსტა ან პაროლი არასწორია!");
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>კოლექცია - ModernArt</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <!-- <div class="logo">ModernArt</div> -->
+     <div class="container_flex">
+        <div class="logo" onclick="window.location.href='index.html'" style="cursor:pointer;">
+            ModernArt
+        </div>
+        <div class="menu_group">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">მთავარი</a></li>
+                <li><a href="#">ჩვენ შესახებ</a></li>
+                <li><a href="collection.html">გალერეა</a></li>
+                <li><a href="account.html">ანგარიში</a></li>
+                <li><a href="cart.html">კალათა</a></li>
+            </ul>
+        </nav>
+        <div class="cart">
+            <a href="cart.html">
+                <img src="https://cdn-icons-png.flaticon.com/512/891/891462.png" alt="cart">
+            </a>
+            <span id="cart-count">0</span>
+        </div>
+        </div>
+    </div>
+  </header>
+
+  <section class="products">
+    <h2>ნამუშევრების კოლექცია</h2>
+    <div class="product-list">
+      <!-- Add many artworks here -->
+      <div class="product" data-name="Joker" data-price="250">
+        <img src="assets/joker.PNG" alt="Art 1" class="zoomable">
+        <h3>ჯოკერი</h3>
+        <p class="price">250 ₾</p>
+        <button class="add-to-cart">დამატება კალათაში</button>
+      </div>
+
+      <div class="product" data-name="roseman" data-price="290">
+        <img src="assets/roseman.PNG" alt="Art 2" class="zoomable">
+        <h3>Roseman</h3>
+        <p class="price">290 ₾</p>
+        <button class="add-to-cart">დამატება კალათაში</button>
+      </div>
+
+      <div class="product" data-name="boat" data-price="220">
+        <img src="assets/boat.JPG" alt="Art 3" class="zoomable">
+        <h3>Boat</h3>
+        <p class="price">220 ₾</p>
+        <button class="add-to-cart">დამატება კალათაში</button>
+      </div>
+
+      <div class="product" data-name="flowers" data-price="220">
+        <img src="assets/flowers.PNG" alt="Art 3" class="zoomable">
+        <h3>Flowers</h3>
+        <p class="price">220 ₾</p>
+        <button class="add-to-cart">დამატება კალათაში</button>
+      </div>
+
+
+      <!-- You can keep adding more artworks -->
+    </div>
+  </section>
+
+         <!-- zoom product pictures -->
+   <div id="image-popup" class="image-popup">
+  <span class="close">&times;</span>
+  <img class="popup-content" id="popup-img">
+</div>
+
+<!-- Footer -->
+  <footer>
+    <div class="container_footer">
+    <p>© 2025 ModernArt — სასწავლო ვერსია</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
