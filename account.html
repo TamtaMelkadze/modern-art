@@ -6,7 +6,7 @@
   <title>ანგარიში | ModernArt</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page">
 
 <header class="navbar">
   <div class="container_flex">
@@ -19,8 +19,8 @@
           <li><a href="index.html">მთავარი</a></li>
           <li><a href="#">ჩვენ შესახებ</a></li>
           <li><a href="collection.html">გალერეა</a></li>
-          <li><a href="cart.html">კალათა</a></li>
           <li><a href="account.html">ანგარიში</a></li>
+          <li><a href="cart.html">კალათა</a></li>
         </ul>
       </nav>
       <div class="cart">
@@ -53,11 +53,43 @@
   <p>უკვე გაქვთ ანგარიში? <a href="login.html">შესვლა</a></p>
 </section>
 
-<footer>
-  <p>© 2025 ModernArt</p>
-</footer>
 
-<script src="script.js"></script>
+
+<script>
+  // accountis gverdi
+
+ const form = document.getElementById('account-form');
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+
+  // Use getElementById to match the input IDs exactly
+  const username = document.getElementById('username').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirm-password').value;
+
+  if(password !== confirmPassword){
+    alert("პაროლები არ ემთხვევა!");
+    return;
+  }
+
+  // Save in localStorage
+  const users = JSON.parse(localStorage.getItem('users')) || [];
+  users.push({ username, email, password });
+  localStorage.setItem('users', JSON.stringify(users));
+
+  alert("ანგარიში წარმატებით შექმნილია!");
+  form.reset();
+  window.location.href = "login.html"; // redirect to login
+});
+
+</script>
+ <!-- Footer -->
+  <footer>
+    <div class="container_footer">
+    <p>© 2025 ModernArt — სასწავლო ვერსია</p>
+    </div>
+  </footer>
 
 </body>
 </html>

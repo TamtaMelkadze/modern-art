@@ -17,7 +17,7 @@
       <nav>
         <ul class="nav-links">
           <li><a href="index.html">მთავარი</a></li>
-          <li><a href="#">ჩვენ შესახებ</a></li>
+          <li><a href="aboutus.html">ჩვენ შესახებ</a></li>
           <li><a href="collection.html">გალერეა</a></li>
           <li><a href="cart.html">კალათა</a></li>
           <li><a href="account.html" class="active-link">ანგარიში</a></li>
@@ -67,7 +67,13 @@
       alert(`გამარჯობა, ${user.username}!`);
       loginForm.reset();
       // redirect to homepage or account dashboard
-      window.location.href = "index.html";
+      // window.location.href = "index.html";
+
+    localStorage.setItem('loggedIn', 'true');
+    localStorage.setItem('currentUser', JSON.stringify(user));
+    
+    window.location.href = "account_logged.html";
+
     } else {
       alert("ელ. ფოსტა ან პაროლი არასწორია!");
     }

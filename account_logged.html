@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ჩემი ანგარიში | ModernArt</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page">
+
+<!-- Header -->
+<header class="navbar">
+  <div class="container_flex">
+    <div class="logo" onclick="window.location.href='index.html'" style="cursor:pointer;">
+      ModernArt
+    </div>
+    <div class="menu_group">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">მთავარი</a></li>
+          <li><a href="aboutus.html">ჩვენ შესახებ</a></li>
+          <li><a href="collection.html">გალერეა</a></li>
+          <li><a href="cart.html">კალათა</a></li>
+          <li><a href="account_logged.html" class="active-link">ანგარიში</a></li>
+        </ul>
+      </nav>
+      <div class="cart">
+        <a href="cart.html">
+          <img src="https://cdn-icons-png.flaticon.com/512/891/891462.png" alt="cart">
+        </a>
+        <span id="cart-count">0</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Content -->
+<section class="account-page">
+  <h2 id="welcome-message">მოგესალმებით!</h2>
+  <p>ეს არის თქვენი ანგარიში. აქ შეგიძლიათ ნახოთ თქვენი კალათა, შეკვეთები ან გამოხვიდეთ ანგარიშიდან.</p>
+  <button class="shop-btn" onclick="logout()">გამოსვლა</button>
+</section>
+
+<!-- Footer -->
+  <footer>
+    <div class="container_footer">
+    <p>© 2025 ModernArt — სასწავლო ვერსია</p>
+    </div>
+  </footer>
+
+<script>
+  // ✅ Check login status
+  const isLoggedIn = localStorage.getItem('loggedIn');
+  const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+
+  if (isLoggedIn !== 'true') {
+    window.location.href = 'login.html';
+  } else {
+    const welcomeMessage = document.getElementById('welcome-message');
+    if (currentUser.username) {
+      welcomeMessage.textContent = `მოგესალმებით, ${currentUser.username}!`;
+    }
+  }
+
+  // ✅ Logout
+  function logout() {
+    localStorage.removeItem('loggedIn');
+    localStorage.removeItem('currentUser');
+    window.location.href = 'login.html';
+  }
+</script>
+
+</body>
+</html>

@@ -64,6 +64,44 @@ body {
   gap: 20px;  
 }
 
+
+
+.hamburger {
+  display: none;
+}
+
+@media (max-width:768px) {
+  .menu_group {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    color: gold;
+    font-size: 1.6em;
+    
+  }
+
+.menu_group.active {
+  display: flex !important;
+  flex-direction: column;
+  background: black; /* optional */
+  position: absolute; /* optional for dropdown */
+  top: 60px; /* adjust depending on your header height */
+  right: 0;
+  /* width: 100%; or fit-content */
+  padding: 10px;
+}
+.cart {
+  display: none;
+}
+.nav-links {
+  flex-direction: column;
+}
+
+}
+
+
 .navbar {
   position: fixed;
   top: 0;          /* stick to the top */
@@ -138,7 +176,7 @@ body {
 }
 
 .products {
-  padding: 50px 20px;
+  padding: 30px 50px 20px;
   text-align: center;
 }
 
@@ -149,6 +187,8 @@ body {
   gap: 30px;
   margin-top: 30px;
 }
+
+
 
 .product {
   display: flex;
@@ -262,7 +302,7 @@ body {
 
 .cart-page {
   text-align: center;
-  padding: 40px;
+  padding: 120px 40px 40px;
 }
 
 #total {
@@ -464,8 +504,10 @@ body {
 /* account styles */
 
 .account-page {
-  max-width: 400px;
-  margin: 50px auto;
+  max-width: 500px;
+  margin-top: 20px;
+  margin-left: 400px;
+  margin-right: 400px;
   padding: 30px;
   background: #fff;
   border-radius: 10px;
@@ -529,3 +571,73 @@ body {
 .account-page a:hover {
   text-decoration: underline;
 }
+
+
+
+
+ 
+ /* Sticky footer only for subpages */
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page footer {
+    margin-top: auto;
+}
+
+
+
+
+
+  .about-section {
+    flex: 1;
+    padding: 120px 80px 80px; /* ზემოთ 120px, გვერდები 20px, ქვემოთ 80px */
+  }
+
+  .about-section h2 {
+    padding-bottom: 20px;
+
+  }
+
+
+ .about-section {
+  padding: 120px 80px 80px; /* ზემოთ ჰედერისგან დაშორება */
+}
+
+.about-wrapper {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 28px;
+  margin-bottom: 20px;   /* ჰედერსა და ტექსტს შორის დაშორება */
+}
+
+.about-text p {
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  max-width: 85%;
+  width: 400px;       /* ფიქსირებული ლამაზი ზომა */
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+

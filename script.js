@@ -125,6 +125,7 @@ function renderCart() {
   const left = document.querySelector('.left');
   const right = document.querySelector('.right');
 
+  if (hero) {
   hero.addEventListener('mousemove', (e) => {
     const rect = hero.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -138,13 +139,13 @@ function renderCart() {
     left.style.width = '50%';
     right.style.width = '50%';
   });
+}
 
-document.addEventListener('DOMContentLoaded', () => {
   // Product Image zoom popup 
   const popup = document.getElementById('image-popup');
   const popupImg = document.getElementById('popup-img');
   const closePopup = document.querySelector('.close');
-
+// console.log(popup)
   document.querySelectorAll('.zoomable').forEach(img => {
     img.addEventListener('click', () => {
       popup.style.display = 'block';
@@ -152,22 +153,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+if (closePopup && popup) {
   closePopup.addEventListener('click', () => {
     popup.style.display = 'none';
   });
+}
 
   window.addEventListener('click', (e) => {
     if (e.target === popup) {
       popup.style.display = 'none';
     }
   });
-});
+
+
 
   // accountis gverdi
 
- const form = document.getElementById('account-form');
+const form = document.getElementById('account-form');
+if(form){
 form.addEventListener('submit', function(e){
   e.preventDefault();
+  
 
   // Use getElementById to match the input IDs exactly
   const username = document.getElementById('username').value.trim();
@@ -189,3 +195,28 @@ form.addEventListener('submit', function(e){
   form.reset();
   window.location.href = "login.html"; // redirect to login
 });
+
+}
+
+const hamburger=document.getElementById('hamburger');
+const menugroup=document.getElementById('menu-group');
+
+if (hamburger && menugroup) {
+hamburger.addEventListener('click', () => {
+  menugroup.classList.toggle('active');
+});
+}
+
+
+
+// Check login before opening account page
+const accountLink = document.querySelector('a[href="account.html"]');
+if (accountLink) {
+  accountLink.addEventListener('click', (e) => {
+    const user = JSON.parse(localStorage.getItem('loggedInUser'));
+    if (user) {
+      e.preventDefault(); // stop default link
+      window.location.href = "account_logged.html"; // go to logged page
+    }
+  });
+}
